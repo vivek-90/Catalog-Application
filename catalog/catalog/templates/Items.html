@@ -1,0 +1,28 @@
+<html>
+
+<body>
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='ItemsPage1.css')}}">
+
+	<header class="header">
+		<ul><ul><Strong>Catalog App</Strong></ul>
+	</header>
+
+	<div class="main">
+		<div class="subheader">
+			<h2>{{category.name}}</h2>
+		</div>
+
+		{% for i in items %}
+
+		<div class="Items">
+			<a href= '{{url_for('showdescription', category_id= category.id, item_id = i.id )}}'>{{i.name}}</a>
+		</div>
+
+		{% endfor %}
+	</div>
+
+
+</body>
+
+</html>

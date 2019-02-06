@@ -1,0 +1,30 @@
+<html>
+
+<body>
+	
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='DeletePage1.css')}}">
+
+	<header class="header">
+		<ul><Strong>Catalog App</Strong></ul>
+	<div class ="login">
+		<a href="{{url_for('gdisconnect')}}">Logout</a>
+	</div>
+	</header>
+
+	<div class="main">
+		<h1>Delete Item</h1>
+
+		<h2> Are you sure you want to delete {{item.name}}? </h2>
+
+		<form action="{{ url_for('deleteItem', category_id=item.category_id, item_id=item.id)}}" method = 'post'>
+
+			<input type='submit', value = 'Delete'>
+
+		</form>
+
+		<a href = "{{ url_for('categoryall', category_id = item.category_id)}}"> Cancel </a>
+
+	</div>	
+</body>
+
+</html>
