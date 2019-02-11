@@ -1,28 +1,41 @@
+<!DOCTYPE html>
 <html>
+  <head>
+  	<meta charset="utf-8">
+  	<title>Sports Equipment Catalog | Eqiupmet List</title>
+  	<meta name="viewport" content="width=device-width">
+    <meta name="description" content="Sports Equipment Catalog">
+	<meta name="keywords" content="IoT, Database, JSON, web design">
+  	<meta name="author" content="Vivek R">
+  	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+  </head>
 
-<body>
-
-	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='ItemsPage1.css')}}">
-
-	<header class="header">
-		<ul><ul><Strong>Catalog App</Strong></ul>
-	</header>
-
-	<div class="main">
-		<div class="subheader">
-			<h2>{{category.name}}</h2>
+  <body>
+  	<header>
+  		<div class="container">
+  			<div id="branding">
+  				<h1><span class="highlight">Sports</span> Equipment Catalog</h1>
+  			</div>
 		</div>
+  	</header>
 
-		{% for i in items %}
+  	<section id="boxes">
+      <div class="container">
+        <h2>{{category.name}}</h2>
+        {% for i in items %}
+        <div class="box">
+           	<a href= '{{url_for('showdescription', category_id= category.id, item_id = i.id )}}'>{{i.name}}</a>
+			<br>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
 
-		<div class="Items">
-			<a href= '{{url_for('showdescription', category_id= category.id, item_id = i.id )}}'>{{i.name}}</a>
-		</div>
-
-		{% endfor %}
-	</div>
-
-
-</body>
-
+    <footer>
+      <p>Sports Catalog, Copyright &copy; 2018</p>
+    </footer>
+  </body>
 </html>
+
+
+
