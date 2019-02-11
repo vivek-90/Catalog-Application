@@ -27,13 +27,7 @@ publiccatalog.html
 publlicdescription.html
 
 Static folder contains:
-AddPage1.css
-check1.css
-DeletePage1.css
-DescriptionPage1.css
-EditPage1.css
-ItemsPage1.css
-OpeningPage1.css
+styles.css
 
 
 Operating Instructions, This includes:
