@@ -1,38 +1,59 @@
+<!DOCTYPE html>
 <html>
+  <head>
+  	<meta charset="utf-8">
+  	<title>Sports Equipment Catalog | Welcome</title>
+  	<meta name="viewport" content="width=device-width">
+        <meta name="description" content="Sports Equipment Catalog">
+	<meta name="keywords" content="IoT, Database, JSON, web design">
+  	<meta name="author" content="Vivek R">
+  	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+  </head>
 
-<body>
-
-	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='check1.css')}}">  
-
-	<header class="header">
-		<ul><Strong>Catalog App</Strong></ul>
-	<div class ="login">
-		<a href="{{url_for('gdisconnect')}}">Logout</a>
-	</div>
-	</header>
-
-	<div class = "main">
-		<div class="subheader"> 
-			<h2>Category</h2>
+  <body>
+  	<header>
+  		<div class="container">
+  			<div id="branding">
+  				<h1><span class="highlight">Sports</span> Equipment Catalog</h1>
+  			</div>
+  			<nav>
+          	<ul>
+            	<button type="submit" class="button_1"><a href="{{url_for('gdisconnect')}}">Logout</a></button>
+          	</ul>
+        	</nav>
 		</div>
+  	</header>
 
+    <section id="showcase">
+        <div class="container">
+        <h1>Affordable Professional Sports Equipment Catalog</h1>
+        <p>The best in town sports equipment available at just one place</p>
+      </div>
+    </section>
 
-		{% for i in category %}
-
-		<div class="Items">
-
-			<a href= '{{url_for('showitem', category_id = i.id)}}'>{{i.name}}</a>
+  	<section id="boxes">
+        <div class="container">
+      	<h2>Choose add item to add a new item in a particular category</h2>
+        {% for i in category %}
+        <div class="box">
+           	<a href= '{{url_for('showitem', category_id = i.id)}}'>{{i.name}}</a>
 			<br>
-			<div class="addItem">
+			<div class="additem">
 				<a href = '{{url_for('newItem', category_id = i.id) }}'>Add Item</a>
 			</div>
-			<br><br>
-		</div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
 
-
-		{% endfor %}
-	</div>	
-
-</body>
-
+    <footer>
+      <p>Sports Catalog, Copyright &copy; 2018</p>
+    </footer>
+  </body>
 </html>
+
+
+
+
+
+		
