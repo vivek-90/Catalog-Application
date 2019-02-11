@@ -2,7 +2,7 @@
 <html>
   <head>
   	<meta charset="utf-8">
-  	<title>Sports Equipment Catalog | Edit Item</title>
+  	<title>Sports Equipment Catalog | Description</title>
   	<meta name="viewport" content="width=device-width">
     <meta name="description" content="Sports Equipment Catalog">
 	<meta name="keywords" content="IoT, Database, JSON, web design">
@@ -26,19 +26,14 @@
 
   	<section id="boxes">
       <div class="container">
-        <h2>Edit Item</h2>
+        <h2>{{items.name}}</h2>
         <div class="box">
-        	<form action= "{{url_for('editItem', category_id = category_id, item_id=item.id)}}" method = 'POST'>
-        		<h2>Title</h2>
-				<p><input type = 'text' size='50' name = 'name' placeholder = '{{item.name}}'>
-				<br><br></p>
-				<h2>Description</h2>
-				<p><input type = 'text' size='50' name = 'description' placeholder = '{{item.description}}'>
-				<br><br>
-				</p>
-				<h3><input type='submit' value='Edit'></h3>
-			</form>
-			<a href= '{{url_for('showdescription', category_id= item.category_id, item_id = item_id)}}'>Cancel</a>
+        	<div class="description">
+        		<p>{{items.description}}</p>
+				<a href='{{url_for('editItem', category_id = category.id, item_id = items.id) }}'>Edit |</a>
+				<a href = '{{url_for('deleteItem', category_id = category.id, item_id = items.id ) }}'>Delete</a>
+				<br>
+			</div>
         </div>
       </div>
     </section>
@@ -48,7 +43,6 @@
     </footer>
   </body>
 </html>
-
 
 
 
