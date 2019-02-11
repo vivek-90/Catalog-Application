@@ -1,28 +1,46 @@
+<!DOCTYPE html>
 <html>
+  <head>
+  	<meta charset="utf-8">
+  	<title>Sports Equipment Catalog | Description</title>
+  	<meta name="viewport" content="width=device-width">
+    <meta name="description" content="Sports Equipment Catalog">
+	<meta name="keywords" content="IoT, Database, JSON, web design">
+  	<meta name="author" content="Vivek R">
+  	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+  </head>
 
-<body>
-
-	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='DescriptionPage1.css')}}">
-
-	<header class="header">
-		<ul><Strong>Catalog App</Strong></ul>
-	<div class="login">
-		<a href="{{url_for('showLogin')}}">LogIn </a>
-	</div>
-	</header>
-
-	<div class="main">
-
-		<h1>{{items.name}}</h1>
-
-		<div>
-			<p>{{items.description}}</p>
-
-			<a href='{{url_for('editItem', category_id = category.id, item_id = items.id) }}'>Edit |</a>
-			<a href = '{{url_for('deleteItem', category_id = category.id, item_id = items.id ) }}'>Delete</a>
+  <body>
+  	<header>
+  		<div class="container">
+  			<div id="branding">
+  				<h1><span class="highlight">Sports</span> Equipment Catalog</h1>
+  			</div>
+  			<nav>
+          	<ul>
+            	<button type="submit" class="button_1"><a href="{{url_for('showLogin')}}">Login</a></button>
+          	</ul>
+        	</nav>
 		</div>
-	</div>
+  	</header>
 
-</body>
+  	<section id="boxes">
+      <div class="container">
+        <h2>{{items.name}}</h2>
+        <div class="box">
+        	<div class="description">
+        		<p>{{items.description}}</p>
+				<a href='{{url_for('editItem', category_id = category.id, item_id = items.id) }}'>Edit |</a>
+				<a href = '{{url_for('deleteItem', category_id = category.id, item_id = items.id ) }}'>Delete</a>
+				<br>
+			</div>
+        </div>
+      </div>
+    </section>
 
+    <footer>
+      <p>Sports Catalog, Copyright &copy; 2018</p>
+    </footer>
+  </body>
 </html>
+
