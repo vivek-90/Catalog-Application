@@ -1,32 +1,47 @@
+<!DOCTYPE html>
 <html>
+  <head>
+  	<meta charset="utf-8">
+  	<title>Sports Equipment Catalog | New Item</title>
+  	<meta name="viewport" content="width=device-width">
+    <meta name="description" content="Sports Equipment Catalog">
+	<meta name="keywords" content="IoT, Database, JSON, web design">
+  	<meta name="author" content="Vivek R">
+  	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+  </head>
 
-<body>
+  <body>
+  	<header>
+  		<div class="container">
+  			<div id="branding">
+  				<h1><span class="highlight">Sports</span> Equipment Catalog</h1>
+  			</div>
+  			<nav>
+          	<ul>
+            	<button type="submit" class="button_1"><a href="{{url_for('gdisconnect')}}">Logout</a></button>
+          	</ul>
+        	</nav>
+		</div>
+  	</header>
 
-	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='AddPage1.css')}}">
-
-	<header class="header">
-		<ul><Strong>Catalog App</Strong></ul>
-	<div class ="login">
-		<a href="{{url_for('gdisconnect')}}">Logout</a>
-	</div>
-	</header>
-
-	<div class="main">
-		<h1>Add Item</h1>
-
-		<form action="{{url_for('newItem', category_id=category_id)}}" method = 'POST'>
-
-		<h2>Item Name:</h2>
-		<input type='text' size='30' name='name' required>
-
-		<h2>Description:</h2>
-		<input type='text' size='50' name='description' required>
-		<br><br>
-
-		<input type='submit' value='Create'>
-
+  	<section id="boxes">
+      <div class="container">
+        <h2>Add Item</h2>
+        <div class="box">
+        	<form action="{{url_for('newItem', category_id=category_id)}}" method = 'POST'>
+			<h2>Item Name:</h2>
+			<input type='text' size='30' name='name' required>
+			<h2>Description:</h2>
+			<input type='text' size='50' name='description' required>
+			<br><br>
+			<input type='submit' value='Create'>
 		</form>
-	</div>	
+        </div>
+      </div>
+    </section>
 
-</body>
+    <footer>
+      <p>Sports Catalog, Copyright &copy; 2018</p>
+    </footer>
+  </body>
 </html>
