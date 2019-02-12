@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  	<meta charset="utf-8">
-  	<title>Sports Equipment Catalog | Edit Item</title>
-  	<meta name="viewport" content="width=device-width">
-    <meta name="description" content="Sports Equipment Catalog">
+
+<head>
+	<meta charset="utf-8">
+	<title>Sports Equipment Catalog | Edit Item</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Sports Equipment Catalog">
 	<meta name="keywords" content="IoT, Database, JSON, web design">
-  	<meta name="author" content="Vivek R">
-  	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
-  </head>
+	<meta name="author" content="Vivek R">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+</head>
 
-  <body>
-  	<header>
-  		<div class="container">
-  			<div id="branding">
-  				<h1><span class="highlight">Sports</span> Equipment Catalog</h1>
-  			</div>
-  			<nav>
-          	<ul>
-            	<button type="submit" class="button_1"><a href="{{url_for('gdisconnect')}}">Logout</a></button>
-          	</ul>
-        	</nav>
+<body>
+	<header>
+		<div class="container">
+			<div id="branding">
+				<h1><span class="highlight">Sports</span> Equipment Catalog</h1>
+			</div>
+			<nav>
+				<ul>
+					<button type="submit" class="button_1"><a href="{{url_for('gdisconnect')}}">Logout</a></button>
+				</ul>
+			</nav>
 		</div>
-  	</header>
+	</header>
 
-  	<section id="boxes">
-      <div class="container">
-        <h2>Edit Item</h2>
-        <div class="box">
-        	<form action= "{{url_for('editItem', category_id = category_id, item_id=item.id)}}" method = 'POST'>
-        		<h2>Title</h2>
-				<p><input type = 'text' size='50' name = 'name' placeholder = '{{item.name}}'>
-				<br><br></p>
-				<h2>Description</h2>
-				<p><input type = 'text' size='50' name = 'description' placeholder = '{{item.description}}'>
-				<br><br>
-				</p>
-				<h3><input type='submit' value='Edit'></h3>
-			</form>
-			<a href= '{{url_for('showdescription', category_id= item.category_id, item_id = item_id)}}'>Cancel</a>
-        </div>
-      </div>
-    </section>
+	<section id="boxes">
+		<div class="container">
+			<h2>Edit Item</h2>
+			<div class="box">
+				<form action="{{url_for('editItem', category_id = category_id, item_id=item.id)}}" method='POST'>
+					<h2>Title</h2>
+					<p><input type='text' size='50' name='name' placeholder='{{item.name}}'>
+						<br><br></p>
+					<h2>Description</h2>
+					<p><input type='text' size='50' name='description' placeholder='{{item.description}}'>
+						<br><br>
+					</p>
+					<h3><input type='submit' value='Edit'></h3>
+				</form>
+				<a href='{{url_for('showdescription', category_id= item.category_id, item_id = item_id)}}'>Cancel</a>
+			</div>
+		</div>
+	</section>
 
-    <footer>
-      <p>Sports Catalog, Copyright &copy; 2018</p>
-    </footer>
-  </body>
+	<footer>
+		<p>Sports Catalog, Copyright &copy; 2018</p>
+	</footer>
+</body>
+
 </html>

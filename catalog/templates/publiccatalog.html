@@ -1,58 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  	<meta charset="utf-8">
-  	<title>Sports Equipment Catalog | Welcome</title>
-  	<meta name="viewport" content="width=device-width">
-    <meta name="description" content="Sports Equipment Catalog">
+
+<head>
+	<meta charset="utf-8">
+	<title>Sports Equipment Catalog | Welcome</title>
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="Sports Equipment Catalog">
 	<meta name="keywords" content="IoT, Database, JSON, web design">
-  	<meta name="author" content="Vivek R">
-  	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stlyes.css')}}">
-  </head>
+	<meta name="author" content="Vivek R">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stlyes.css')}}">
+</head>
 
-  <body>
-  	<header>
-  		<div class="container">
-  			<div id="branding">
-  				<h1><span class="highlight">Sports</span> Equipment Catalog</h1>
-  			</div>
-  			<nav>
-          	<ul>
-            	<button type="submit" class="button_1"><a href="{{url_for('showLogin')}}">Login</a></button>
-          	</ul>
-        	</nav>
+<body>
+	<header>
+		<div class="container">
+			<div id="branding">
+				<h1><span class="highlight">Sports</span> Equipment Catalog</h1>
+			</div>
+			<nav>
+				<ul>
+					<button type="submit" class="button_1"><a href="{{url_for('showLogin')}}">Login</a></button>
+				</ul>
+			</nav>
 		</div>
-  	</header>
+	</header>
 
-  	<section id="showcase">
-      <div class="container">
-        <h1>Affordable Professional Sports Equipment Catalog</h1>
-        <p>The best in town sports equipment available at just one place</p>
-      </div>
-    </section>
+	<section id="showcase">
+		<div class="container">
+			<h1>Affordable Professional Sports Equipment Catalog</h1>
+			<p>The best in town sports equipment available at just one place</p>
+		</div>
+	</section>
 
-  	<section id="boxes">
-      <div class="container">
-        <h2>Please choose a category</h2>
-        {% for i in category %}
-        <div class="box">
-        	<a href= '{{url_for('showitem', category_id = i.id)}}'>{{i.name}}</a>
-			<br>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
+	<section id="boxes">
+		<div class="container">
+			<h2>Please choose a category</h2>
+			{% for i in category %}
+			<div class="box">
+				<a href='{{url_for('showitem', category_id = i.id)}}'>{{i.name}}</a>
+				<br>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
 
-    <footer>
-      <p>Sports Catalog, Copyright &copy; 2018</p>
-    </footer>
-  </body>
+	<footer>
+		<p>Sports Catalog, Copyright &copy; 2018</p>
+	</footer>
+</body>
+
 </html>
-
-
-
-	
-		
-
-
-
